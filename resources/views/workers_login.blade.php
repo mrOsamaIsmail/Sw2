@@ -1,10 +1,20 @@
 @extends('layouts.index')
 
-@section('title','Home page')
+@section('title','Worker login')
 
 @section('contant')
  
-@section('ED_active','active')
+<!-- @section('Te_active','active') -->
+
+@section('navbar')
+
+	<li class="nav-item "><a href="index.php" class="nav-link">Home</a></li>
+	<li class="nav-item "><a href="alogin" class="nav-link">Admin login</a></li>
+	<li class="nav-item active"><a href="wlogin" class="nav-link">Team login</a></li>
+	<li class="nav-item "><a href="gallery" class="nav-link">Gallery</a></li>
+	<li class="nav-item "><a href="contact" class="nav-link">Contact</a></li>
+
+@endsection
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
@@ -23,7 +33,7 @@
    .box
    {
      position : absolute;
-     top :20%;
+     top :23%;
      left : 35%;
      transform: translate (-50%,-50%);
      width :400px;
@@ -119,16 +129,16 @@
    @endif
  -->
 
-   <form method="post" action="/workerlogged">
+   <form method="post" action="workerlogged">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
   
     <div class="inputbox">
      <label>Enter Email</label>
-     <input type="email" name="field3" class="form-control" />
+     <input type="email" name="field3" placeholder=" Enter username" class="form-control" />
     </div>
     <div class="inputbox">
      <label>Enter Password</label>
-     <input type="password" name="field4" class="form-control" />
+     <input type="password" name="field4" placeholder=" Enter password" class="form-control" />
     </div>
     <div class="inputbox">
      <input type="submit" name="login" class="btn btn-primary" value="Login" />

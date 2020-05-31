@@ -3,7 +3,17 @@
 
 @section('contant')
 
-@section('Gal_active','active')
+<!-- @section('Gal_active','active') -->
+
+@section('navbar')
+
+	<li class="nav-item "><a href="index.php" class="nav-link">Home</a></li>
+	<li class="nav-item "><a href="alogin" class="nav-link">Admin login</a></li>
+	<li class="nav-item "><a href="wlogin" class="nav-link">Team login</a></li>
+	<li class="nav-item active"><a href="gallery" class="nav-link">Gallery</a></li>
+	<li class="nav-item "><a href="contact" class="nav-link">Contact</a></li>
+
+@endsection
 
 
 <section class="hero-wrap hero-wrap-2" style="background-image: url('images/ut1.jpg');" data-stellar-background-ratio="0.5">

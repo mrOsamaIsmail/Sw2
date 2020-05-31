@@ -45,7 +45,7 @@
 	    <div class="container">
 				<div class="row justify-content-between">
 					<div class="col-md-3 mb-md-0 mb-4 d-flex align-items-center">
-						<a class="navbar-brand" href="index.php">pharamcy</a>
+						<a class="navbar-brand" href="#">pharamcy</a>
 					</div>
 					<div class="col-md-7">
 						<div class="row">
@@ -75,11 +75,13 @@
         </div>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav mr-auto">
-	        	<li class="nav-item @yield('H_active')"><a href="index.php" class="nav-link">Home</a></li>
-	        	<li class="nav-item @yield('AD_active')"><a href="" class="nav-link">Admin login</a></li>
-	        	<li class="nav-item @yield('Te_active')"><a href="" class="nav-link">Team login</a></li>
+	        	<!-- <li class="nav-item @yield('H_active')"><a href="index.php" class="nav-link">Home</a></li>
+	        	<li class="nav-item @yield('AD_active')"><a href="alogin" class="nav-link">Admin login</a></li>
+	        	<li class="nav-item @yield('Te_active')"><a href="wlogin" class="nav-link">Team login</a></li>
 	        	<li class="nav-item @yield('Gal_active')"><a href="gallery" class="nav-link">Gallery</a></li>
-	          <li class="nav-item @yield('Con_active')"><a href="contact" class="nav-link">Contact</a></li>
+	          <li class="nav-item @yield('Con_active')"><a href="contact" class="nav-link">Contact</a></li> -->
+            @yield('navbar')
+
 	        </ul>
 	      </div>
 	    </div>
@@ -150,7 +152,7 @@
           <div class="col-md-12 text-center">
 
             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="#" target="_blank">SW2_team</a>
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
           </div>
         </div>

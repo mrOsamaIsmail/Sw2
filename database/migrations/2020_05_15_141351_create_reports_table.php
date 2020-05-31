@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateWorkersTable extends Migration
+class CreateReportsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateWorkersTable extends Migration
      */
     public function up()
     {
-        Schema::create('workers', function (Blueprint $table) {
-            $table->increments('id')->AUTO_INCREMENT();
-            $table->string('name');
-            $table->string('email');
-            $table->string('password');
-            $table->integer('active');
+        Schema::create('reports', function (Blueprint $table) {
+            $table->integer('id');
+            $table->text('report');
+            $table->string('sender');
+            $table->integer('sender_id');
+            $table->string('receiver');
+            $table->integer('receiver_id');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreateWorkersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('workers');
+        Schema::dropIfExists('reports');
     }
 }

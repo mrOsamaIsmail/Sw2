@@ -1,10 +1,20 @@
 @extends('layouts.index')
 
-@section('title','contact')
+@section('title','Contact')
 
 @section('contant')
 
-@section('Con_active','active')
+<!-- @section('Con_active','active') -->
+
+@section('navbar')
+
+	<li class="nav-item "><a href="index.php" class="nav-link">Home</a></li>
+	<li class="nav-item "><a href="alogin" class="nav-link">Admin login</a></li>
+	<li class="nav-item "><a href="wlogin" class="nav-link">Team login</a></li>
+	<li class="nav-item "><a href="gallery" class="nav-link">Gallery</a></li>
+	<li class="nav-item active"><a href="contact" class="nav-link">Contact</a></li>
+
+@endsection
 
 <section class="hero-wrap hero-wrap-2" style="background-image: url('images/ut1.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
@@ -20,9 +30,9 @@
 		<section class="ftco-section bg-light">
     	<div class="container">
     		<div class="row justify-content-center">
-    			<div class="col-md-12">
+    			<!-- <div class="col-md-12">
 						<div id="map" class="map"></div>
-					</div>
+					</div> -->
 					<div class="col-md-12">
 						<div class="wrapper">
 							<div class="row no-gutters">

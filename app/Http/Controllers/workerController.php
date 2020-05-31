@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 use App\worker;
+use App\report;
 
 class workerController extends Controller
 {
@@ -50,6 +52,7 @@ class workerController extends Controller
                 $worker -> name = $request->input('name');
                 $worker -> email = $request->input('email');
                 $worker -> password = $request->input('password');
+                $worker -> active = 0;
                 
                 if (worker::where('email', $request->email)->exists())  {
                     $statues = 'User Already Exists Bruh :(';
@@ -60,7 +63,7 @@ class workerController extends Controller
                 $statues = 'Done';
                 return view('RegisterWorker',compact('statues'));
                 }
-            else
+                else
                 {
                 $statues = 'check credintials plz :(!!';
                 return view('RegisterWorker',compact('statues'));
@@ -70,54 +73,36 @@ class workerController extends Controller
           
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+    public function show_W_report(){
+        
+        $reports = report::select ('reports.report','reports.sender','reports.id','reports.created_at')
+        // ->select('reports.report','reports.receiver_id')
+        ->join('workers','workers.id','=','reports.receiver_id')
+        ->where(['workers.active' =>  1 , 'reports.sender' =>  'admin'])
+        ->get();
+
+        return view('Reports.W_view_report',compact('reports'));
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function show_A_report()
     {
-        //
+        $reports = report::select ('reports.report','reports.sender','reports.id','reports.created_at')
+        ->where(['reports.receiver' =>  'admin'])
+        ->get();
+        return view('Reports.A_view_report',compact('reports'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+    public function destroy1($id){
+        $id =  report::find($id);
+        $id->delete();
+        return redirect('/W_view_report');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
-    public function register(Request $request)
-    {
-       
+    public function destroy2($id){
+        $id =  report::find($id);
+        $id->delete();
+        return redirect('/A_view_report');
     }
 
 

@@ -5,6 +5,16 @@
 @section('contant')
 
 
+@section('navbar')
+
+	<li class="nav-item active"><a href="registerworker" class="nav-link">Rigister worker</a></li>
+	<li class="nav-item "><a href="A_make_report" class="nav-link">Make reports</a></li>
+	<li class="nav-item "><a href="A_view_report" class="nav-link">View reports</a></li>
+	<li class="nav-item "><a href="aloggedout" class="nav-link">Logout</a></li>
+
+@endsection
+
+
 
 <section class="hero-wrap hero-wrap-2" style="background-image: url('images/ut1.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
@@ -28,7 +38,7 @@
 									<div class="contact-wrap w-100 p-md-5 p-4">
 										<h3 class="mb-4">Register A new Worker</h3>
                                         
-                                        <form method="post" id="contactForm" class="contactForm",action="/registerworker">
+                                        <form method="post" id="contactForm" class="contactForm",action="registerworker">
                                             @csrf
 											<div class="row">
 												<div class="col-md-6">
@@ -43,12 +53,12 @@
 												</div>
 												<div class="col-md-12">
 													<div class="form-group">
-														<input type="text" class="form-control" name="password" id="password" placeholder="Password">
+														<input type="password" class="form-control" name="password" id="password" placeholder="Password">
 													</div>
 												</div>
 												<div class="col-md-12">
 													<div class="form-group">
-														<input type="text" class="form-control" name="repassword" id="repassword" placeholder="Re Enter Password">
+														<input type="password" class="form-control" name="repassword" id="repassword" placeholder="Re Enter Password">
 													</div>
 												</div>
 												<div class="col-md-12">
